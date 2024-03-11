@@ -24,7 +24,7 @@ public class Impuesto extends CasillaEspecial{
                 ", cantidad=" + cantidad +
                 ", nombre='" + nombre + '\'' +
                 ", numero=" + numero +
-                ", jugador=" + jugador +
+                ", jugador=" + jugadores +
                 '}';
     }
 }
