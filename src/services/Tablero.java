@@ -35,18 +35,12 @@ public class Tablero {
 
         //  ******* 5 Impuestos (Casilla) --> 6, 13, 18, 26, 36 ******
 
-        Impuesto imp1 = new Impuesto("Impuesto Propiedad Urbana", 6, 500, 0.5);
-        Impuesto imp2 = new Impuesto("Impuesto Riqueza", 13, 1200, 4.2);
-        Impuesto imp3 = new Impuesto("Impuesto IRPF", 18, 1000,19.0);
-        Impuesto imp4 = new Impuesto("Impuesto Circulacion", 26, 750, 3.5);
-        Impuesto imp5 = new Impuesto("Impuesto Herencias",36, 1000, 2.3);
-
-        //Agregamos los impuestos en el ArrayList de casillas
-        this.addCasilla(imp1);
-        this.addCasilla(imp2);
-        this.addCasilla(imp3);
-        this.addCasilla(imp4);
-        this.addCasilla(imp5);
+        //Agregamos los impuestos generados en el ArrayList de casillas
+        this.addCasilla(new Impuesto("Impuesto Propiedad Urbana", 6, 500, 0.5));
+        this.addCasilla(new Impuesto("Impuesto Riqueza", 13, 1200, 4.2));
+        this.addCasilla(new Impuesto("Impuesto IRPF", 18, 1000,19.0));
+        this.addCasilla(new Impuesto("Impuesto Circulacion", 26, 750, 3.5));
+        this.addCasilla(new Impuesto("Impuesto Herencias",36, 1000, 2.3));
 
     }
 
