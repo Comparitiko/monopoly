@@ -1,16 +1,18 @@
 package entities;
 
-public class Casilla {
+import java.util.ArrayList;
+
+public abstract class Casilla {
   // Props
   protected String nombre;
   protected Integer numero;
-  protected Jugador jugador;
+  protected ArrayList<Jugador> jugadores;
 
   // Constructor
   public Casilla(String nombre, Integer numero) {
     this.nombre = nombre;
     this.numero = numero;
-    this.jugador = null;
+    this.jugadores = new ArrayList<>();
   }
 
   // Getters and Setters
@@ -30,12 +32,8 @@ public class Casilla {
     this.numero = numero;
   }
 
-  public Jugador getJugador() {
-    return jugador;
-  }
-
-  public void setJugador(Jugador jugador) {
-    this.jugador = jugador;
+  public ArrayList<Jugador> getJugadores() {
+    return jugadores;
   }
 
   // Methods
@@ -45,7 +43,7 @@ public class Casilla {
     final StringBuffer sb = new StringBuffer("Casilla{");
     sb.append("nombre='").append(nombre).append('\'');
     sb.append(", numero=").append(numero);
-    sb.append(", jugador=").append(jugador);
+    sb.append(", jugador=").append(jugadores);
     sb.append('}');
     return sb.toString();
   }

@@ -26,7 +26,7 @@ public abstract class CasillaEspecial extends Casilla {
             "cantidad=" + cantidad +
             ", nombre='" + nombre + '\'' +
             ", numero=" + numero +
-            ", jugador=" + jugador +
+            ", jugador=" + jugadores +
             '}';
   }
 }
