@@ -67,9 +67,9 @@ public class Jugador {
    * @param casillaActual casilla a la que se movera el jugador
    */
   public void mover (Casilla casillaActual) {
-    this.casillaActual.setJugador(null);
+    this.casillaActual.getJugadores().remove(this);
     this.casillaActual = casillaActual;
-    this.casillaActual.setJugador(this);
+    this.casillaActual.getJugadores().add(this);
   }
 
   /**
@@ -77,12 +77,12 @@ public class Jugador {
    * @return true si el jugador esta en bancarrota, false en caso contrario
    */
   public boolean bancarrota () {
-    return this.dinero <= 0 && this.propiedades.size() == 0;
+    return this.dinero <= 0 && this.propiedades.isEmpty();
   }
 
   public void accion (Propiedad propiedad) {
     Scanner sc = new Scanner(System.in);
-    if (propiedad.getJugador() == null) {
+    if (propiedad.getPropietario() == null) {
       Integer opcion = 0;
       while (opcion != 1 || opcion != 2) {
         try {
@@ -95,19 +95,19 @@ public class Jugador {
         }
         if (opcion == 1 && this.dinero - propiedad.getCoste() >= 0) {
           this.propiedades.add(propiedad);
-          propiedad.setJugador(this);
+          propiedad.setPropietario(this);
           System.out.println("Has comprado " + propiedad.getNombre());
           this.dinero -= propiedad.getCoste();
-        }
-        else if (opcion == 2) System.out.println("No compras la propiedad " + propiedad.getNombre());
+        } else if (opcion == 2) System.out.println("No compras la propiedad " + propiedad.getNombre());
         else if (this.dinero < propiedad.getCoste()) System.out.println("No tienes suficiente dinero");
       }
-    }
-    else {
-      if (this.dinero < propiedad.getCoste()) {
-        System.out.println("No tienes suficiente dinero, tienes que vender propiedades que sean tuyas")
+    } else {
+      if (this.dinero < propiedad.getCoste()) System.out.println("No tienes suficiente dinero, tienes que vender propiedades que sean tuyas");
+      else if (this.dinero > propiedad.getCoste()) {
+        propiedad.setPropietario(this);
+        this.propiedades.add(propiedad);
+        System.out.println("Has comprado la propiedad  " + propiedad.getNombre());
       }
-
     }
   }
 }
