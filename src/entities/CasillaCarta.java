@@ -9,4 +9,5 @@ public class CasillaCarta extends CasillaEspecial {
     super(nombre, numero, cantidad);
     this.carta = carta;
   }
+
 }
