@@ -25,7 +25,7 @@ public class Carcel extends CasillaEspecial {
             ", cantidad=" + cantidad +
             ", nombre='" + nombre + '\'' +
             ", numero=" + numero +
-            ", jugador=" + jugador +
+            ", jugador=" + jugadores +
             '}';
   }
 }

@@ -2,7 +2,7 @@ package entities;
 
 import java.util.ArrayList;
 
-public class Casilla {
+public abstract class Casilla {
   // Props
   protected String nombre;
   protected Integer numero;
@@ -12,7 +12,7 @@ public class Casilla {
   public Casilla(String nombre, Integer numero) {
     this.nombre = nombre;
     this.numero = numero;
-    this.jugadores = new ArrayList<>;
+    this.jugadores = new ArrayList<>();
   }
 
   // Getters and Setters
@@ -32,7 +32,7 @@ public class Casilla {
     this.numero = numero;
   }
 
-  public Jugador getJugador() {
+  public ArrayList<Jugador> getJugadores() {
     return jugadores;
   }
 
