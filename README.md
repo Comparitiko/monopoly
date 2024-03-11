@@ -2,8 +2,8 @@
 
 ### Haciendolo @AdrianPerez2207, @Comparitiko y @alxrgdriguez
 
-Alejandro: Tablero, Juego.
-Adrian: 
-Gabriel: 
+Alejandro: Tablero
+Adrian: Juego
+Gabriel: Jugador
 
 ![clases.jpeg](clases.jpeg)
