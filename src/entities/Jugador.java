@@ -59,6 +59,9 @@ public class Jugador {
     return sb.toString();
   }
 
+  // Tengo que modificar metodos de Jugador para que funcione correctamente
+  // y completar el metodo accion
+
   /**
    * Metodo para que el jugador se mueva a otra casilla
    * @param casillaActual casilla a la que se movera el jugador
