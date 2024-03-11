@@ -4,9 +4,9 @@ public class Propiedad extends Casilla{
 
   private Double coste;
   private Double alquiler;
-  private String propietario;
+  private Jugador propietario;
 
-  public Propiedad(String nombre, Integer numero, Double coste, Double alquiler, String propietario) {
+  public Propiedad(String nombre, Integer numero, Double coste, Double alquiler, Jugador propietario) {
     super(nombre, numero);
     this.coste = coste;
     this.alquiler = alquiler;
@@ -31,11 +31,11 @@ public class Propiedad extends Casilla{
     this.alquiler = alquiler;
   }
 
-  public String getPropietario() {
+  public Jugador getPropietario() {
     return propietario;
   }
 
-  public void setPropietario(String propietario) {
+  public void setPropietario(Jugador propietario) {
     this.propietario = propietario;
   }
 

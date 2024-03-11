@@ -1,5 +1,5 @@
 # Juego del monopoly usando Java
 
-### Haciendolo @AdrianPerez2207 y @Comparitiko
+### Haciendolo @AdrianPerez2207, @Comparitiko y @alxrgdriguez
 
 ![clases.jpeg](clases.jpeg)
