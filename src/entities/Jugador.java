@@ -64,6 +64,7 @@ public class Jugador {
    * @param casillaActual casilla a la que se movera el jugador
    */
   public void mover (Casilla casillaActual) {
+    this.casillaActual.setJugador(null);
     this.casillaActual = casillaActual;
     this.casillaActual.setJugador(this);
   }
@@ -100,7 +101,10 @@ public class Jugador {
       }
     }
     else {
-      if
+      if (this.dinero < propiedad.getCoste()) {
+        System.out.println("No tienes suficiente dinero, tienes que vender propiedades que sean tuyas")
+      }
+
     }
   }
 }
