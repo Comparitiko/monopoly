@@ -59,6 +59,6 @@ public class Jugador {
   }
 
   public void moverse () {
-    
+
   }
 }
