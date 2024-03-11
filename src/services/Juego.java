@@ -54,8 +54,23 @@ public class Juego {
     public static int tirarDados(int minimo, int maximo){
         return (int) ((Math.random()*(maximo - minimo + 1) + minimo));
     }
-    public void moverJugador(Jugador jugador, Tablero tablero){
-        if(jugador.getDinero() > 0){
+
+    /**
+     * Pintamos el nombre y la posición de cada jugador en el tablero.
+     */
+    public void pintarTablero(){
+        StringBuffer sb = new StringBuffer();
+        for (Jugador jugador : jugadores){
+            sb.append("Jugador: ").append(jugador.getNombre());
+            sb.append("Casilla actual: ").append(jugador.getCasillaActual().getNombre());
+            sb.append("\n");
         }
     }
+    public void moverJugador(Jugador jugador){
+        Integer casillaActual = jugador.getCasillaActual().getNumero() + (tirarDados(1, 6) + tirarDados(1, 6));
+        if (!jugador.bancarrota()) {
+            jugador.mover(casillaActual);
+        }
+    }
+
 }
