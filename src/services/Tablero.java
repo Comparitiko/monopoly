@@ -121,7 +121,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
 
         //-------------- Carta --------------
-        //this.addCasilla(new Carta("¡Me he perdido! Vuelve al inicio del tablero", -35, 0));
+        //this.addCasilla(new Carta("¡Me he perdido! Vuelve al inicio del tablero", -34, 0));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
