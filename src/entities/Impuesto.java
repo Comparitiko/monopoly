@@ -2,7 +2,7 @@ package entities;
 
 public class Impuesto extends CasillaEspecial {
 
-    public Impuesto(String nombre, Integer cantidad) {
+    public Impuesto(String nombre, Double cantidad) {
         super(nombre, cantidad);
     }
 

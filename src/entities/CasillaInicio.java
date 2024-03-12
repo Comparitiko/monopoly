@@ -12,5 +12,6 @@ public class CasillaInicio extends CasillaEspecial {
   @Override
   public void accion(Jugador jugador) {
     System.out.println("Recibes " + dineroAlpasar + "euros");
+
   }
 }
