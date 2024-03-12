@@ -11,7 +11,6 @@ public abstract class CasillaEspecial extends Casilla {
   }
 
   // Getters and Setters
-
   public Integer getCantidad() {
     return cantidad;
   }

@@ -113,11 +113,12 @@ public class Jugador {
         else if (this.dinero < propiedad.getCoste()) System.out.println("No tienes suficiente dinero");
       }
     } else {
-      if (this.dinero < propiedad.getCoste()) System.out.println("No tienes suficiente dinero, tienes que vender propiedades que sean tuyas");
-      else if (this.dinero > propiedad.getCoste()) {
-        propiedad.setPropietario(this);
-        this.propiedades.add(propiedad);
-        System.out.println("Has comprado la propiedad  " + propiedad.getNombre());
+      if (this.dinero < propiedad.getAlquiler()) {
+        System.out.println("No tienes suficiente dinero, tienes que vender propiedades que sean tuyas");
+
+      }
+      else if (this.dinero > propiedad.getAlquiler()) {
+        pagarAlquiler(propiedad);
       }
     }
   }
@@ -129,7 +130,10 @@ public class Jugador {
     this.dinero -= propiedad.getCoste();
   }
 
-  private void pagarAlquiler () {
-
+  private void pagarAlquiler (Propiedad propiedad) {
+    this.dinero -= propiedad.getAlquiler();
+    propiedad.getPropietario().setDinero(propiedad.getPropietario().getDinero() + propiedad.getAlquiler());
   }
+
+  private void
 }

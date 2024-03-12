@@ -2,7 +2,7 @@ package entities;
 
 public class CasillaMoverCarcel extends CasillaEspecial {
   // Props
-  Carcel carcel;
+  private Carcel carcel;
 
   public CasillaMoverCarcel (Carcel carcel, String nombre, Integer cantidad) {
     super(nombre, cantidad);

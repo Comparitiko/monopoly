@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Casilla {
   // Props
@@ -38,7 +39,6 @@ public abstract class Casilla {
   }
 
   // Methods
-
   @Override
   public String toString() {
     final StringBuffer sb = new StringBuffer("Casilla{");
@@ -47,5 +47,18 @@ public abstract class Casilla {
     sb.append(", jugador=").append(jugadores);
     sb.append('}');
     return sb.toString();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Casilla casilla = (Casilla) o;
+    return Objects.equals(numero, casilla.numero);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(numero);
   }
 }
