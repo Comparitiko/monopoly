@@ -1,9 +1,6 @@
 package services;
 
-import entities.Carta;
-import entities.Casilla;
-import entities.Impuesto;
-import entities.Jugador;
+import entities.*;
 
 import java.util.ArrayList;
 
@@ -33,14 +30,28 @@ public class Tablero {
 
     public void hacerTablero(){
 
-        //  ******* 5 Impuestos (Casilla) --> 6, 13, 18, 26, 36 ******
+        // Tablero
+        this.addCasilla(new CasillaInicio("Inicio"));
+        this.addCasilla(new Propiedad("Calle de la Almedina",2000.0,300.0));
+        this.addCasilla(new Propiedad("Puerto de Almeria",1430.0,420.0));
+        this.addCasilla(new Impuesto("Impuesto IRPF", 1000,10.0));
+        this.addCasilla(new Propiedad("Aeropuerto Pulpi",3100.0,360.0));
+        this.addCasilla(new Propiedad("Calle de Granada",1100.0,550.0));
+        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+        this.addCasilla(new Propiedad("Estación de Goya",2020.0,320.0));
+        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+
+
+
+        // IMPUESTOS
 
         //Agregamos los impuestos generados en el ArrayList de casillas
-        this.addCasilla(new Impuesto("Impuesto Propiedad Urbana", 6, 500, 0.5));
-        this.addCasilla(new Impuesto("Impuesto Riqueza", 13, 1200, 4.2));
-        this.addCasilla(new Impuesto("Impuesto IRPF", 18, 1000,19.0));
-        this.addCasilla(new Impuesto("Impuesto Circulacion", 26, 750, 3.5));
-        this.addCasilla(new Impuesto("Impuesto Herencias",36, 1000, 2.3));
+        this.addCasilla(new Impuesto("Impuesto Propiedad Urbana", 500, 0.5));
+        this.addCasilla(new Impuesto("Impuesto Riqueza", 1200, 4.2));
+
+        this.addCasilla(new Impuesto("Impuesto Circulacion", 750, 3.5));
+        this.addCasilla(new Impuesto("Impuesto Herencias", 1000, 2.3));
 
     }
 
