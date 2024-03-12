@@ -18,6 +18,6 @@ public class Impuesto extends CasillaEspecial {
 
     @Override
     public void accion(Jugador jugador) {
-        jugador.setDinero(jugador.getDinero() + (this.cantidad * this.impuesto));
+        jugador.setDinero(jugador.getDinero() + this.cantidad);
     }
 }
