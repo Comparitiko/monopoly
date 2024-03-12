@@ -16,12 +16,13 @@ public class Tablero {
 
         this.casillas = new ArrayList<>();
         this.cartas = new ArrayList<>();
+        this.hacerTablero();
     }
 
     /**
      * Generar 40 casillas
      * 1 Inicio
-     * 1 Carcel
+     * 1 Cárcel / 1 Visitar Cárcel
      * 5 Impuesto
      * 5 Carta
      * 27 Propiedades
@@ -30,20 +31,72 @@ public class Tablero {
 
     public void hacerTablero(){
 
+        //-------------- Tablero --------------
         Carcel visitaCarcel = new Carcel("Visita Cárcel");
 
-        // Tablero
+        // --> DESDE LA CASILLA 1 HASTA LA CASILLA 11
+
+        //-------------- Inicio --------------
         this.addCasilla(new CasillaInicio("Inicio"));
+
+        //-------------- Propiedad --------------
         this.addCasilla(new Propiedad("Calle de la Almedina",2000.0,300.0));
         this.addCasilla(new Propiedad("Puerto de Almeria",1430.0,420.0));
+
+        //-------------- Impuesto --------------
         this.addCasilla(new Impuesto("Impuesto IRPF", -80.0));
-        this.addCasilla(new Propiedad("Aeropuerto Pulpi",3100.0,850.0));
+
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Aeropuerto de Pulpi",3100.0,850.0));
         this.addCasilla(new Propiedad("Calle de Granada",1100.0,550.0));
-        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+
+        //-------------- Carta --------------
+        //this.addCasilla(new Carta("¡Lotería! Gana 1000€ del banco", 0, 1000));
+
+        //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Estación de Goya",4200.0,600.0));
         this.addCasilla(new Propiedad("Compañia de Seguros Santa Pola",2600.0,510.0));
+
+
+        //-------------- Impuesto --------------
+        this.addCasilla(new Impuesto("Impuesto Propiedad", -42.5 ));
+
+        //-------------- Añadimos la casilla a la casilla visita --------------
+        this.addCasilla(visitaCarcel);
+
+        // --> DESDE LA CASILLA 11 HASTA LA CASILLA 21
+
+        //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Paseo del prado",5000.0,320.0));
-        this.addCasilla(new Impuesto("Impuesto Propiedad Urbana", -42.5 ));
+        this.addCasilla(new Propiedad("Calle Alcalá",1650.0,600.0));
+        this.addCasilla(new Propiedad("Parking Monte Rey",2300.0,490.0));
+
+        //-------------- Carta --------------
+        //this.addCasilla(new Carta("¡El perro me persigue! Retrocede 3 casillas", -3, 0));
+
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Ayuntamiento de Cuevas",4875.0,670.0));
+        this.addCasilla(new Propiedad("Power Horse Stadium",6800.0,950.0));
+        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+
+        //-------------- Impuesto --------------
+        this.addCasilla(new Impuesto("Impuesto Circulacion", -22.3));
+
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Calle Alcalá",1000.0,367.0));
+        this.addCasilla(new Propiedad("Catedral San Juan el Divino", 2350.0, 532.0));
+
+        // --> DESDE LA CASILLA 21 HASTA LA CASILLA 31 (CÁRCEL)
+
+        //-------------- Carta --------------
+        //this.addCasilla(new Carta("¡Es mi cumpleaños! Todos los jugadores te pagan 300€", 0, 300));
+
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
+        this.addCasilla(new Propiedad("Power Horse Stadium",6800.0,950.0));
+        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+
+
 
 
 
@@ -52,10 +105,9 @@ public class Tablero {
 
         //Agregamos los impuestos generados en el ArrayList de casillas
 
-        this.addCasilla(new Impuesto("Impuesto Riqueza", 1200, 4.2));
+        this.addCasilla(new Impuesto("Impuesto Riqueza", -68.5 ));
 
-        this.addCasilla(new Impuesto("Impuesto Circulacion", 750, 3.5));
-        this.addCasilla(new Impuesto("Impuesto Herencias", 1000, 2.3));
+        this.addCasilla(new Impuesto("Impuesto Herencias", -60.3));
 
     }
 
@@ -99,7 +151,7 @@ public class Tablero {
 
     /**
      * Metodo para añadir una casilla al tablero
-     * @param casilla nº de casilla pasa por parámetro
+     * @param casilla nº de casilla pasada por parámetro
      */
 
     public void addCasilla(Casilla casilla) {
