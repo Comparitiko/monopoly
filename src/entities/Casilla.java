@@ -61,4 +61,6 @@ public abstract class Casilla {
   public int hashCode() {
     return Objects.hash(numero);
   }
+
+  public abstract void accion (Jugador jugador);
 }

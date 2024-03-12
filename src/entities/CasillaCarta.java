@@ -5,7 +5,7 @@ public class CasillaCarta extends CasillaEspecial {
   private Carta carta;
 
   // Constructor
-  public CasillaCarta(String nombre, Integer numero, Integer cantidad, Carta carta) {
+  public CasillaCarta(String nombre, Integer numero, Double cantidad, Carta carta) {
     super(nombre, cantidad);
     this.carta = carta;
   }
@@ -18,6 +18,7 @@ public class CasillaCarta extends CasillaEspecial {
     this.carta = carta;
   }
 
+  // Methods
   @Override
   public String toString() {
     return "CasillaCarta{" +
@@ -27,5 +28,10 @@ public class CasillaCarta extends CasillaEspecial {
             ", numero=" + numero +
             ", jugador=" + jugadores +
             '}';
+  }
+
+  @Override
+  public void accion(Jugador jugador) {
+
   }
 }

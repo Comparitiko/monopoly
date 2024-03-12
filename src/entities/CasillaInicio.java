@@ -2,16 +2,15 @@ package entities;
 
 public class CasillaInicio extends CasillaEspecial {
   // Props
-  private Double dineroAlpasar;
+  private static final Double dineroAlpasar = 250d;
 
   // Constructor
   public CasillaInicio(String nombre) {
-    super(nombre, 1);
-    this.dineroAlpasar = 250.00;
+    super(nombre, dineroAlpasar);
   }
 
-  // Getters and Setters
-  public Double getDineroAlpasar() {
-    return dineroAlpasar;
+  @Override
+  public void accion(Jugador jugador) {
+    System.out.println("Recibes " + dineroAlpasar + "euros");
   }
 }

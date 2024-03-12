@@ -2,20 +2,20 @@ package entities;
 
 public abstract class CasillaEspecial extends Casilla {
   // Props
-  protected Integer cantidad;
+  protected Double cantidad;
 
   // Constructor
-  public CasillaEspecial(String nombre, Integer cantidad) {
+  public CasillaEspecial(String nombre, Double cantidad) {
     super(nombre);
     this.cantidad = cantidad;
   }
 
   // Getters and Setters
-  public Integer getCantidad() {
+  public Double getCantidad() {
     return cantidad;
   }
 
-  public void setCantidad(Integer cantidad) {
+  public void setCantidad(Double cantidad) {
     this.cantidad = cantidad;
   }
 
@@ -28,4 +28,7 @@ public abstract class CasillaEspecial extends Casilla {
             ", jugador=" + jugadores +
             '}';
   }
+
+  @Override
+  public abstract void accion(Jugador jugador);
 }

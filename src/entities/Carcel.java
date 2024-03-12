@@ -1,12 +1,12 @@
 package entities;
 
-public class Carcel extends CasillaEspecial {
+public class Carcel extends Casilla {
   // Props
   private Integer turnosSinTirar;
 
   // Constructor
-  public Carcel(String nombre, Integer cantidad) {
-    super(nombre, cantidad);
+  public Carcel(String nombre) {
+    super(nombre);
     this.turnosSinTirar = 1;
   }
 
@@ -22,10 +22,14 @@ public class Carcel extends CasillaEspecial {
   public String toString() {
     return "Carcel{" +
             "turnosSinTirar=" + turnosSinTirar +
-            ", cantidad=" + cantidad +
             ", nombre='" + nombre + '\'' +
             ", numero=" + numero +
             ", jugador=" + jugadores +
             '}';
+  }
+
+  @Override
+  public void accion(Jugador jugador) {
+    System.out.println("Estas en la carcel solo de visita");
   }
 }

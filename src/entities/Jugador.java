@@ -135,5 +135,4 @@ public class Jugador {
     propiedad.getPropietario().setDinero(propiedad.getPropietario().getDinero() + propiedad.getAlquiler());
   }
 
-  private void
 }
