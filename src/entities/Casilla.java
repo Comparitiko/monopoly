@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public abstract class Casilla {
   // Props
+  private static Integer numeroCasilla = 0;
   protected String nombre;
   protected Integer numero;
   protected ArrayList<Jugador> jugadores;
 
   // Constructor
-  public Casilla(String nombre, Integer numero) {
+  public Casilla(String nombre) {
     this.nombre = nombre;
-    this.numero = numero;
+    this.numero = numeroCasilla++;
     this.jugadores = new ArrayList<>();
   }
 

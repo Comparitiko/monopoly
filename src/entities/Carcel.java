@@ -5,8 +5,8 @@ public class Carcel extends CasillaEspecial {
   private Integer turnosSinTirar;
 
   // Constructor
-  public Carcel(String nombre, Integer numero, Integer cantidad) {
-    super(nombre, numero, cantidad);
+  public Carcel(String nombre, Integer cantidad) {
+    super(nombre, cantidad);
     this.turnosSinTirar = 1;
   }
 

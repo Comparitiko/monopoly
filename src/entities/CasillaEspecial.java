@@ -5,8 +5,8 @@ public abstract class CasillaEspecial extends Casilla {
   protected Integer cantidad;
 
   // Constructor
-  public CasillaEspecial(String nombre, Integer numero, Integer cantidad) {
-    super(nombre, numero);
+  public CasillaEspecial(String nombre, Integer cantidad) {
+    super(nombre);
     this.cantidad = cantidad;
   }
 

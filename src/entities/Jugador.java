@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Jugador {
@@ -59,6 +60,19 @@ public class Jugador {
     return sb.toString();
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Jugador jugador = (Jugador) o;
+    return Objects.equals(nombre, jugador.nombre);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(nombre);
+  }
+
   // Tengo que modificar metodos de Jugador para que funcione correctamente
   // y completar el metodo accion
 
@@ -80,7 +94,7 @@ public class Jugador {
     return this.dinero <= 0 && this.propiedades.isEmpty();
   }
 
-  public void accion (Propiedad propiedad) {
+  public void accionSobrePropiedad (Propiedad propiedad) {
     Scanner sc = new Scanner(System.in);
     if (propiedad.getPropietario() == null) {
       Integer opcion = 0;
@@ -94,10 +108,7 @@ public class Jugador {
           System.out.println("Opción incorrecta");
         }
         if (opcion == 1 && this.dinero - propiedad.getCoste() >= 0) {
-          this.propiedades.add(propiedad);
-          propiedad.setPropietario(this);
-          System.out.println("Has comprado " + propiedad.getNombre());
-          this.dinero -= propiedad.getCoste();
+          comprarPropiedad(propiedad);
         } else if (opcion == 2) System.out.println("No compras la propiedad " + propiedad.getNombre());
         else if (this.dinero < propiedad.getCoste()) System.out.println("No tienes suficiente dinero");
       }
@@ -109,5 +120,16 @@ public class Jugador {
         System.out.println("Has comprado la propiedad  " + propiedad.getNombre());
       }
     }
+  }
+
+  private void comprarPropiedad (Propiedad propiedad) {
+    this.propiedades.add(propiedad);
+    propiedad.setPropietario(this);
+    System.out.println("Has comprado " + propiedad.getNombre());
+    this.dinero -= propiedad.getCoste();
+  }
+
+  private void pagarAlquiler () {
+
   }
 }

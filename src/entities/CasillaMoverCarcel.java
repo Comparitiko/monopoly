@@ -4,8 +4,8 @@ public class CasillaMoverCarcel extends CasillaEspecial {
   // Props
   Carcel carcel;
 
-  public CasillaMoverCarcel (Carcel carcel, String nombre, Integer numero, Integer cantidad) {
-    super(nombre, numero, cantidad);
+  public CasillaMoverCarcel (Carcel carcel, String nombre, Integer cantidad) {
+    super(nombre, cantidad);
     this.carcel = carcel;
   }
 

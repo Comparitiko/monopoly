@@ -6,7 +6,7 @@ public class CasillaCarta extends CasillaEspecial {
 
   // Constructor
   public CasillaCarta(String nombre, Integer numero, Integer cantidad, Carta carta) {
-    super(nombre, numero, cantidad);
+    super(nombre, cantidad);
     this.carta = carta;
   }
 

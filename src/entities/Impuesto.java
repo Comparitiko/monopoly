@@ -4,8 +4,8 @@ public class Impuesto extends CasillaEspecial{
 
     private Double impuesto;
 
-    public Impuesto(String nombre, Integer numero, Integer cantidad, Double impuesto) {
-        super(nombre, numero, cantidad);
+    public Impuesto(String nombre, Integer cantidad, Double impuesto) {
+        super(nombre, cantidad);
         this.impuesto = impuesto;
     }
 
