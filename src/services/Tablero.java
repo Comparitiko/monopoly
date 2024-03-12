@@ -27,8 +27,6 @@ public class Tablero {
      * 5 Carta
      * 27 Propiedades
      */
-
-
     public void hacerTablero(){
 
         //-------------- Tablero --------------
@@ -115,22 +113,26 @@ public class Tablero {
 
         // --> DESDE LA CASILLA 31 HASTA LA CASILLA 40
 
-
-
-
-
-
-
-        // IMPUESTOS
-
-        //Agregamos los impuestos generados en el ArrayList de casillas
-
-
-
+        //-------------- Impuesto --------------
         this.addCasilla(new Impuesto("Impuesto Herencias", -60.3));
 
-    }
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
+        this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
 
+        //-------------- Carta --------------
+        //this.addCasilla(new Carta("¡Me he perdido! Vuelve al inicio del tablero", -35, 0));
+
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
+        this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
+
+        //-------------- Propiedades --------------
+        this.addCasilla(new Propiedad("Banco Sabadell",8965.0,5630.0));
+        this.addCasilla(new Propiedad("Auditorio San Antonio",4232.0,2500.0));
+        this.addCasilla(new Propiedad("Hospital Reyna",7400.0,4470.0));
+
+    }
 
     //---- Getters ----
 
@@ -158,22 +160,19 @@ public class Tablero {
 
     /**
      * Devuelve una representación textual del tablero de Monopoly
-     * @return String con
+     * @return String con Jugador
      */
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Tablero{");
-        sb.append("Jugador=");
-        sb.append('}');
-        return sb.toString();
-
+        return "Tablero{" +
+                //"Jugadores=" + jugadores +
+                '}';
     }
 
     /**
      * Metodo para añadir una casilla al tablero
      * @param casilla nº de casilla pasada por parámetro
      */
-
     public void addCasilla(Casilla casilla) {
         this.casillas.add(casilla);
 
