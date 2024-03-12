@@ -6,11 +6,11 @@ public class Propiedad extends Casilla{
   private Double alquiler;
   private Jugador propietario;
 
-  public Propiedad(String nombre, Double coste, Double alquiler, Jugador propietario) {
+  public Propiedad(String nombre, Double coste, Double alquiler) {
     super(nombre);
     this.coste = coste;
     this.alquiler = alquiler;
-    this.propietario = propietario;
+    this.propietario = null;
   }
 
   // Getters and Setters
