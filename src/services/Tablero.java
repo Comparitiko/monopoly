@@ -20,34 +20,38 @@ public class Tablero {
 
     /**
      * Generar 40 casillas
-     * 1 Inicio (Casilla) --> 1
-     * 1 Carcel (Casilla) --> 31 IN JAIN hasta la casilla 11
-     * 5 Impuesto (Casilla) --> 6, 13, 18, 26, 36
-     * 5 Carta (Casilla) -->
-     * 27 Propiedades (Casilla) -->
+     * 1 Inicio
+     * 1 Carcel
+     * 5 Impuesto
+     * 5 Carta
+     * 27 Propiedades
      */
 
 
     public void hacerTablero(){
 
+        Carcel visitaCarcel = new Carcel("Visita Cárcel");
+
         // Tablero
         this.addCasilla(new CasillaInicio("Inicio"));
         this.addCasilla(new Propiedad("Calle de la Almedina",2000.0,300.0));
         this.addCasilla(new Propiedad("Puerto de Almeria",1430.0,420.0));
-        this.addCasilla(new Impuesto("Impuesto IRPF", 1000,10.0));
-        this.addCasilla(new Propiedad("Aeropuerto Pulpi",3100.0,360.0));
+        this.addCasilla(new Impuesto("Impuesto IRPF", -80.0));
+        this.addCasilla(new Propiedad("Aeropuerto Pulpi",3100.0,850.0));
         this.addCasilla(new Propiedad("Calle de Granada",1100.0,550.0));
         this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
-        this.addCasilla(new Propiedad("Estación de Goya",2020.0,320.0));
-        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
-        this.addCasilla(new Propiedad("Compañia eléctrica",2020.0,320.0));
+        this.addCasilla(new Propiedad("Estación de Goya",4200.0,600.0));
+        this.addCasilla(new Propiedad("Compañia de Seguros Santa Pola",2600.0,510.0));
+        this.addCasilla(new Propiedad("Paseo del prado",5000.0,320.0));
+        this.addCasilla(new Impuesto("Impuesto Propiedad Urbana", -42.5 ));
+
 
 
 
         // IMPUESTOS
 
         //Agregamos los impuestos generados en el ArrayList de casillas
-        this.addCasilla(new Impuesto("Impuesto Propiedad Urbana", 500, 0.5));
+
         this.addCasilla(new Impuesto("Impuesto Riqueza", 1200, 4.2));
 
         this.addCasilla(new Impuesto("Impuesto Circulacion", 750, 3.5));
