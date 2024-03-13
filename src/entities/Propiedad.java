@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Scanner;
+
 public class Propiedad extends Casilla{
 
   private Double coste;
@@ -50,5 +52,33 @@ public class Propiedad extends Casilla{
     sb.append(", numero=").append(numero);
     sb.append('}');
     return sb.toString();
+  }
+
+  @Override
+  public void accion(Jugador jugador) {
+    if (this.propietario == null && jugador.getDinero() >= this.coste) {
+      Integer opcion = menuCompra();
+      if (opcion == 1) jugador.comprarPropiedad(this);
+    }  else if (this.propietario != null) {
+      jugador.pagarAlquiler(this);
+    } else {
+      System.out.println("No tienes suficiente dinero para comprar " + this.nombre);
+    }
+  }
+
+  private Integer menuCompra () {
+    Scanner sc = new Scanner(System.in);
+    Integer opcionMenu = 0;
+    while (opcionMenu != 1 || opcionMenu != 2) {
+      System.out.println("Quieres comprar la propiedad " + this.nombre + " con valor de: " + this.coste);
+      System.out.println("1. Si");
+      System.out.println("2. No");
+      try {
+        opcionMenu = Integer.parseInt(sc.nextLine());
+      } catch (Exception e) {
+        System.out.println("Opcion incorrecta");
+      }
+    }
+    return opcionMenu;
   }
 }

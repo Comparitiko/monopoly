@@ -102,6 +102,11 @@ public class Jugador {
     this.dinero -= cantidad;
   }
 
+  public void pagarAlquiler (Propiedad propiedad) {
+    propiedad.getPropietario().cobrar(propiedad.getAlquiler());
+    this.pagar(propiedad.getAlquiler());
+  }
+
   /**
    * Metodo para cobrar una cantidad
    * @param cantidad cantidad a cobrar
