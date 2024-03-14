@@ -18,5 +18,5 @@ public class CasillaCarta extends CasillaEspecial {
     jugador.setDinero(jugador.getDinero() + carta.getCantidad());
     System.out.println("Te ha tocado la carta: " + carta.getTexto() + "Tu dinero ahora es: " + jugador.getDinero());
     }
-  }
 }
+

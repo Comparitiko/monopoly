@@ -20,7 +20,7 @@ public class Main {
       try {
         numeroJugadores = Integer.parseInt(sc.nextLine());
         if (numeroJugadores < 2 || numeroJugadores > 4) throw new Exception();
-        else break;;
+        else break;
       } catch (Exception e) {
         System.out.println("Ingresa un numero entre 2 y 4");
       }
