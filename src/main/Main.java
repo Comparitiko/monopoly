@@ -28,8 +28,15 @@ public class Main {
     return numeroJugadores;
   }
 
-  public static Jugador menuJugador() {
-
+  /**
+   * Metodo para crear un jugador con su nombre
+   * @param numeroJugador numero de jugador que se esta creando
+   * @return Jugador creado
+   */
+  public static Jugador menuJugador(Integer numeroJugador) {
+    System.out.println("Ingresa el nombre del jugador " + (numeroJugador + 1));
+    String nombre = sc.nextLine();
+    return new Jugador(nombre);
   }
 
   public static void main(String[] args) {
@@ -37,9 +44,11 @@ public class Main {
 
     Integer numeroJugadores = menuNumeroJugadores();
 
+    // Bucle para crear los jugadores
     for (int i = 0; i < numeroJugadores; i++) {
-      Jugador jugador = menuJugador();
+      Jugador jugador = menuJugador(i);
       j.agregarJugador(jugador);
     }
+
   }
 }
