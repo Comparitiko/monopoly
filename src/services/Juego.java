@@ -51,7 +51,7 @@ public class Juego {
      * Generamos la tirada de los dados aleatoriamente.
      * @return
      */
-    public static int tirarDados(int minimo, int maximo){
+    private static int tirarDados(int minimo, int maximo){
         return (int) ((Math.random()*(maximo - minimo + 1) + minimo));
     }
 

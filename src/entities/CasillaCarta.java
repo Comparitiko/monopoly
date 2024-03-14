@@ -1,21 +1,14 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class CasillaCarta extends CasillaEspecial {
   // Props
-  private Carta carta;
+  private static ArrayList<Carta> cartas = new ArrayList<>();
 
   // Constructor
-  public CasillaCarta(String nombre, Integer numero, Double cantidad, Carta carta) {
+  public CasillaCarta(String nombre, Integer numero, Double cantidad) {
     super(nombre, cantidad);
-    this.carta = carta;
-  }
-
-  public Carta getCarta() {
-    return carta;
-  }
-
-  public void setCarta(Carta carta) {
-    this.carta = carta;
   }
 
   // Methods
