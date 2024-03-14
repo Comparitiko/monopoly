@@ -7,15 +7,13 @@ public class Carta {
   private static Integer numeroCartas = 0;
   private Integer id;
   private String texto;
-  private Integer moverte;
   private Double cantidad;
 
   // Constructor
 
-  public Carta(String texto, Integer moverte, Double cantidad) {
+  public Carta(String texto, Double cantidad) {
     this.id = numeroCartas++;
     this.texto = texto;
-    this.moverte = moverte;
     this.cantidad = cantidad;
   }
 
@@ -32,14 +30,6 @@ public class Carta {
     this.texto = texto;
   }
 
-  public Integer getMoverte() {
-    return moverte;
-  }
-
-  public void setMoverte(Integer moverte) {
-    this.moverte = moverte;
-  }
-
   public Double getCantidad() {
     return cantidad;
   }
@@ -53,7 +43,6 @@ public class Carta {
   public String toString() {
     final StringBuffer sb = new StringBuffer("Carta{");
     sb.append("texto='").append(texto).append('\'');
-    sb.append(", moverte=").append(moverte);
     sb.append(", cantidad=").append(cantidad);
     sb.append('}');
     return sb.toString();

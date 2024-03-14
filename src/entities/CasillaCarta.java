@@ -13,23 +13,10 @@ public class CasillaCarta extends CasillaEspecial {
 
   // Methods
   @Override
-  public String toString() {
-    return "CasillaCarta{" +
-            ", cantidad=" + cantidad +
-            ", nombre='" + nombre + '\'' +
-            ", numero=" + numero +
-            ", jugador=" + jugadores +
-            '}';
-  }
-
-  @Override
   public void accion(Jugador jugador) {
     Carta carta = this.cartas.getFirst();
-    if (carta.getMoverte() != 0) {
-      Casilla casilaAMoverse = ;
-      jugador.mover();
-    } else {
-      jugador.setDinero(jugador.getDinero() + carta.getCantidad());
+    jugador.setDinero(jugador.getDinero() + carta.getCantidad());
+    System.out.println("Te ha tocado la carta: " + carta.getTexto() + "Tu dinero ahora es: " + jugador.getDinero());
     }
   }
 }

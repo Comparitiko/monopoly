@@ -134,11 +134,11 @@ public class Tablero {
     }
 
     private void crearCartas() {
-        this.cartas.add(new Carta("¡Eres un desgraciado! Retrocede 10 casillas.", -10, 0.0));
-        this.cartas.add(new Carta("¡Lotería! Gana 1000€ del banco", 0, 1000.0));
-        this.cartas.add(new Carta("¡Me he perdido! Vuelve al inicio del tablero", -35, 0.0));
-        this.cartas.add(new Carta("¡Es mi cumpleaños! Todos los jugadores te pagan 300€", 0, 300.0));
-        this.cartas.add(new Carta("¡El perro me persigue! Retrocede 3 casillas", -3, 0.0));
+        this.cartas.add(new Carta("¡Eres un desgraciado! paga 100€.", 500.0));
+        this.cartas.add(new Carta("¡Lotería! Gana 1000€ del banco", 1000.0));
+        this.cartas.add(new Carta("¡Me he perdido! Paga 50€ para pagar al guia", 50.0));
+        this.cartas.add(new Carta("¡Es mi cumpleaños! Tu abuela te regala 150€", 300.0));
+        this.cartas.add(new Carta("¡Te ha tocado un sorteo de 100€ enhorabuena!", 100.0));
     }
 
     //---- Getters ----
