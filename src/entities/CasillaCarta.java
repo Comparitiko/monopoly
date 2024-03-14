@@ -24,6 +24,12 @@ public class CasillaCarta extends CasillaEspecial {
 
   @Override
   public void accion(Jugador jugador) {
-
+    Carta carta = this.cartas.getFirst();
+    if (carta.getMoverte() != 0) {
+      Casilla casilaAMoverse = ;
+      jugador.mover();
+    } else {
+      jugador.setDinero(jugador.getDinero() + carta.getCantidad());
+    }
   }
 }
