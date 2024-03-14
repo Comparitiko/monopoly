@@ -62,5 +62,9 @@ public abstract class Casilla {
     return Objects.hash(numero);
   }
 
+  /**
+   * Metodo para que cada casilla haga alguna cosa
+   * @param jugador que cae en la casilla
+   */
   public abstract void accion (Jugador jugador);
 }

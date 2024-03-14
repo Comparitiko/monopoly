@@ -15,7 +15,7 @@ public class CasillaMoverCarcel extends CasillaEspecial {
 
   @Override
   public void accion(Jugador jugador) {
-    System.out.println("Vas a la carcel");
+    System.out.println("Jugador " + jugador.getNombre() + " se va a la carcel");
     jugador.mover(carcel);
   }
 }

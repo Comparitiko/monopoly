@@ -9,8 +9,8 @@ public class Juego {
     private ArrayList<Jugador> jugadores;
     private Tablero tablero;
 
-    public Juego(Tablero tablero) {
-        this.tablero = tablero;
+    public Juego() {
+        this.tablero = new Tablero();
         this.jugadores = new ArrayList<Jugador>();
     }
 
