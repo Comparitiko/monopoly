@@ -9,13 +9,11 @@ public class Tablero {
     // ---- Propiedades ----
 
     private ArrayList<Casilla> casillas;
-    private ArrayList<Carta> cartas;
 
     // ---- Constructor ----
     public Tablero(){
 
         this.casillas = new ArrayList<>();
-        this.cartas = new ArrayList<>();
         this.hacerTablero();
     }
 
@@ -27,7 +25,7 @@ public class Tablero {
      * 5 Carta
      * 27 Propiedades
      */
-    public void hacerTablero(){
+    private void hacerTablero(){
 
         //-------------- Tablero --------------
         Carcel visitaCarcel = new Carcel("Visita Cárcel");
@@ -50,7 +48,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Calle de Granada",1100.0,550.0));
 
         //-------------- Carta --------------
-        //this.addCasilla(new Carta("¡Lotería! Gana 1000€ del banco", 0, 1000));
+        this.addCasilla(new CasillaCarta("¡Lotería! Gana 1000€ del banco", 0, 1000.0));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Estación de Goya",4200.0,600.0));
@@ -71,7 +69,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Parking Monte Rey",2300.0,490.0));
 
         //-------------- Carta --------------
-        //this.addCasilla(new Carta("¡El perro me persigue! Retrocede 3 casillas", -3, 0));
+        this.addCasilla(new CasillaCarta("¡El perro me persigue! Retrocede 3 casillas", -3, 0.0));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Ayuntamiento de Cuevas",4875.0,670.0));
@@ -88,7 +86,7 @@ public class Tablero {
         // --> DESDE LA CASILLA 21 HASTA LA CASILLA 31 (CÁRCEL)
 
         //-------------- Carta --------------
-        //this.addCasilla(new Carta("¡Es mi cumpleaños! Todos los jugadores te pagan 300€", 0, 300));
+        this.addCasilla(new CasillaCarta("¡Es mi cumpleaños! Todos los jugadores te pagan 300€", 0, 300.0));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
@@ -102,7 +100,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
 
         //-------------- Carta --------------
-        //this.addCasilla(new Carta("¡Eres un desgraciado! Retrocede 10 casillas.", -10, 0));
+        this.addCasilla(new CasillaCarta("¡Eres un desgraciado! Retrocede 10 casillas.", -10, 0.0));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Instituto IES JAROSO",10000.0,2000.0));
@@ -121,7 +119,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
 
         //-------------- Carta --------------
-        //this.addCasilla(new Carta("¡Me he perdido! Vuelve al inicio del tablero", -34, 0));
+        this.addCasilla(new CasillaCarta("¡Me he perdido! Vuelve al inicio del tablero", -35, 0.0));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
@@ -140,32 +138,17 @@ public class Tablero {
         return casillas;
     }
 
-    public ArrayList<Carta> getCartas() {
-        return cartas;
-    }
-
 
     // ---- Metodos ----
 
     /**
-     * Metodo para genenerar un numero aleatorio entero entre un minimo y maximo
-     * @param min numero mas pequeño entre el rango
-     * @param max numero mas grande entre el rango
-     * @return un numero aleatorio entre un numero maximo y mínimo
-     */
-    public static int numaleatorio(int min, int max){
-
-        return (int) (Math.random() * (max - min + 1) + min);
-    }
-
-    /**
      * Devuelve una representación textual del tablero de Monopoly
-     * @return String con Jugador
+     * @return String las casillas del tablero
      */
     @Override
     public String toString() {
         return "Tablero{" +
-                //"Jugadores=" + jugadores +
+                "casillas=" + casillas +
                 '}';
     }
 
