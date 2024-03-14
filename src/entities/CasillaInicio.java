@@ -11,6 +11,6 @@ public class CasillaInicio extends CasillaEspecial {
 
   @Override
   public void accion(Jugador jugador) {
-    System.out.println("Ele jugador " + jugador.getNombre() + " esta en inicio");
+    System.out.println("Ele jugador " + jugador.getNombre() + " esta en inicio y va a cobrar.");
   }
 }

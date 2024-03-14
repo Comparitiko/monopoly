@@ -63,7 +63,7 @@ public abstract class Casilla {
   }
 
   /**
-   * Metodo para que cada casilla haga alguna cosa
+   * Metodo que al caer en una casilla se realice una accion
    * @param jugador que cae en la casilla
    */
   public abstract void accion (Jugador jugador);
