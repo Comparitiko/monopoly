@@ -4,18 +4,17 @@ import java.util.ArrayList;
 
 public class CasillaCarta extends CasillaEspecial {
   // Props
-  private static ArrayList<Carta> cartas = new ArrayList<>();
-
+  ArrayList<Carta> cartas;
   // Constructor
-  public CasillaCarta(String nombre, Integer numero, Double cantidad) {
+  public CasillaCarta(String nombre, Double cantidad, ArrayList<Carta> cartas) {
     super(nombre, cantidad);
+    this.cartas = cartas;
   }
 
   // Methods
   @Override
   public String toString() {
     return "CasillaCarta{" +
-            "carta=" + carta +
             ", cantidad=" + cantidad +
             ", nombre='" + nombre + '\'' +
             ", numero=" + numero +

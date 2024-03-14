@@ -8,11 +8,11 @@ public class Carta {
   private Integer id;
   private String texto;
   private Integer moverte;
-  private Integer cantidad;
+  private Double cantidad;
 
   // Constructor
 
-  public Carta(String texto, Integer moverte, Integer cantidad) {
+  public Carta(String texto, Integer moverte, Double cantidad) {
     this.id = numeroCartas++;
     this.texto = texto;
     this.moverte = moverte;
@@ -40,11 +40,11 @@ public class Carta {
     this.moverte = moverte;
   }
 
-  public Integer getCantidad() {
+  public Double getCantidad() {
     return cantidad;
   }
 
-  public void setCantidad(Integer cantidad) {
+  public void setCantidad(Double cantidad) {
     this.cantidad = cantidad;
   }
 

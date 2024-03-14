@@ -9,11 +9,12 @@ public class Tablero {
     // ---- Propiedades ----
 
     private ArrayList<Casilla> casillas;
+    private ArrayList<Carta> cartas;
 
     // ---- Constructor ----
     public Tablero(){
-
         this.casillas = new ArrayList<>();
+        this.cartas = new ArrayList<>();
         this.hacerTablero();
     }
 
@@ -48,7 +49,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Calle de Granada",1100.0,550.0));
 
         //-------------- Carta --------------
-        this.addCasilla(new CasillaCarta("¡Lotería! Gana 1000€ del banco", 0, 1000.0));
+        this.addCasilla(new CasillaCarta("Coge carta", 0d, this.cartas));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Estación de Goya",4200.0,600.0));
@@ -69,7 +70,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Parking Monte Rey",2300.0,490.0));
 
         //-------------- Carta --------------
-        this.addCasilla(new CasillaCarta("¡El perro me persigue! Retrocede 3 casillas", -3, 0.0));
+        this.addCasilla(new CasillaCarta("Coge carta", 0d, this.cartas));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Ayuntamiento de Cuevas",4875.0,670.0));
@@ -86,7 +87,7 @@ public class Tablero {
         // --> DESDE LA CASILLA 21 HASTA LA CASILLA 31 (CÁRCEL)
 
         //-------------- Carta --------------
-        this.addCasilla(new CasillaCarta("¡Es mi cumpleaños! Todos los jugadores te pagan 300€", 0, 300.0));
+        this.addCasilla(new CasillaCarta("Coge carta", 0d, this.cartas));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
@@ -100,7 +101,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
 
         //-------------- Carta --------------
-        this.addCasilla(new CasillaCarta("¡Eres un desgraciado! Retrocede 10 casillas.", -10, 0.0));
+        this.addCasilla(new CasillaCarta("Coge carta", 0d, this.cartas));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Instituto IES JAROSO",10000.0,2000.0));
@@ -119,7 +120,7 @@ public class Tablero {
         this.addCasilla(new Propiedad("Estación de tren Jaravía",1290.0,320.0));
 
         //-------------- Carta --------------
-        this.addCasilla(new CasillaCarta("¡Me he perdido! Vuelve al inicio del tablero", -35, 0.0));
+        this.addCasilla(new CasillaCarta("Coge carta", 0d , this.cartas));
 
         //-------------- Propiedades --------------
         this.addCasilla(new Propiedad("Aeropuerto de Villaricos",2800.0,750.0));
@@ -132,12 +133,23 @@ public class Tablero {
 
     }
 
+    private void crearCartas() {
+        this.cartas.add(new Carta("¡Eres un desgraciado! Retrocede 10 casillas.", -10, 0.0));
+        this.cartas.add(new Carta("¡Lotería! Gana 1000€ del banco", 0, 1000.0));
+        this.cartas.add(new Carta("¡Me he perdido! Vuelve al inicio del tablero", -35, 0.0));
+        this.cartas.add(new Carta("¡Es mi cumpleaños! Todos los jugadores te pagan 300€", 0, 300.0));
+        this.cartas.add(new Carta("¡El perro me persigue! Retrocede 3 casillas", -3, 0.0));
+    }
+
     //---- Getters ----
 
     public ArrayList<Casilla> getCasillas() {
         return casillas;
     }
 
+    public ArrayList<Carta> getCartas() {
+        return cartas;
+    }
 
     // ---- Metodos ----
 
