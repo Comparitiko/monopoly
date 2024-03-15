@@ -8,6 +8,7 @@ public class Jugador {
   // Props
   private Double dinero;
   private String nombre;
+  private Integer turnosSinTirar;
   private ArrayList<Propiedad> propiedades;
   private Casilla casillaActual;
 
@@ -15,6 +16,7 @@ public class Jugador {
   public Jugador (String nombre) {
     this.dinero = 500.00;
     this.nombre = nombre;
+    this.turnosSinTirar = 0;
     this.propiedades = new ArrayList<Propiedad>();
     this.casillaActual = null;
   }
@@ -46,6 +48,14 @@ public class Jugador {
 
   public void setCasillaActual(Casilla casillaActual) {
     this.casillaActual = casillaActual;
+  }
+
+  public Integer getTurnosSinTirar () {
+    return this.turnosSinTirar;
+  }
+
+  public void setTurnosSinTirar (Integer turnosSinTirar) {
+    this.turnosSinTirar = turnosSinTirar;
   }
 
   // Methods
@@ -91,7 +101,7 @@ public class Jugador {
    * @return true si el jugador esta en bancarrota, false en caso contrario
    */
   public boolean bancarrota () {
-    return this.dinero <= 0 && this.propiedades.isEmpty();
+    return this.dinero <= 0;
   }
 
   /**
@@ -119,6 +129,7 @@ public class Jugador {
    * Metodo para vender una propiedad a la banca cobrando las 3/4 partes del coste original
    */
   public void vender () {
+    // No lo he implementado al final, si da tiempo se hace.
     Scanner sc = new Scanner(System.in);
     int opcionMenu = 0;
     while (opcionMenu < 0 || opcionMenu > propiedades.size() - 1) {

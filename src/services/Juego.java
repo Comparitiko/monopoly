@@ -62,14 +62,32 @@ public class Juego {
         StringBuffer sb = new StringBuffer();
         for (Jugador jugador : jugadores){
             sb.append("Jugador: ").append(jugador.getNombre());
-            sb.append("Casilla actual: ").append(jugador.getCasillaActual().getNombre());
+            sb.append(", Casilla actual: ").append(jugador.getCasillaActual().getNombre());
             sb.append("\n");
         }
     }
     public void moverJugador(Jugador jugador){
-        Integer casillaActual = jugador.getCasillaActual().getNumero() + (tirarDados(1, 6) + tirarDados(1, 6));
-        if (!jugador.bancarrota()) {
-            jugador.mover(casillaActual);
+        if (jugador.getTurnosSinTirar() != 0) {
+            jugador.setTurnosSinTirar(jugador.getTurnosSinTirar() - 1);
+            System.out.println("Este turno el jugador " + jugador.getNombre() + " no se mueve.");
+            return;
+        }
+        Integer dado1 = (tirarDados(1, 6));
+        Integer dado2 = (tirarDados(1, 6));
+        if (dado1 == 5 || dado2 == 5) {
+            jugador.mover(tablero.buscarCasilla(2));
+            jugador.getCasillaActual().accion(jugador);
+        } else {
+            Integer numCasillaActual = jugador.getCasillaActual().getNumero() + dado1 + dado2;
+
+            Casilla casillaActual = this.tablero.buscarCasilla(numCasillaActual);
+            if (!jugador.bancarrota()) {
+                jugador.mover(casillaActual);
+                jugador.getCasillaActual().accion(jugador);
+            } else {
+                System.out.println("El jugador " + jugador.getNombre() + " esta en bancarrota.");
+                this.delJugador(jugador);
+            }
         }
     }
 

@@ -170,7 +170,6 @@ public class Tablero {
      */
     public void addCasilla(Casilla casilla) {
         this.casillas.add(casilla);
-
     }
 
     /**

@@ -66,6 +66,10 @@ public class Propiedad extends Casilla{
     }
   }
 
+  /**
+   * Metodo para mostrar el menu para realizar la compra de una propiedad
+   * @return opcion elegida
+   */
   private Integer menuCompra () {
     Scanner sc = new Scanner(System.in);
     Integer opcionMenu = 0;

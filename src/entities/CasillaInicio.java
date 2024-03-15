@@ -9,6 +9,7 @@ public class CasillaInicio extends CasillaEspecial {
     super(nombre, dineroAlpasar);
   }
 
+  // Methods
   @Override
   public void accion(Jugador jugador) {
     System.out.println("Ele jugador " + jugador.getNombre() + " esta en inicio y va a cobrar.");

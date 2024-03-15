@@ -50,5 +50,7 @@ public class Main {
       j.agregarJugador(jugador);
     }
 
+    while (true) {}
+
   }
 }

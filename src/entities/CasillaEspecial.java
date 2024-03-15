@@ -19,16 +19,7 @@ public abstract class CasillaEspecial extends Casilla {
     this.cantidad = cantidad;
   }
 
-  @Override
-  public String toString() {
-    return "CasillaEspecial{" +
-            "cantidad=" + cantidad +
-            ", nombre='" + nombre + '\'' +
-            ", numero=" + numero +
-            ", jugador=" + jugadores +
-            '}';
-  }
-
+  // Methods
   @Override
   public abstract void accion(Jugador jugador);
 }
