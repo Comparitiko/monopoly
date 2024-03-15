@@ -73,7 +73,7 @@ public class Propiedad extends Casilla{
   private Integer menuCompra () {
     Scanner sc = new Scanner(System.in);
     Integer opcionMenu = 0;
-    while (opcionMenu != 1 || opcionMenu != 2) {
+    while (opcionMenu < 1 || opcionMenu > 2) {
       System.out.println("Quieres comprar la propiedad " + this.nombre + " con valor de: " + this.coste);
       System.out.println("1. Si");
       System.out.println("2. No");

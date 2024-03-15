@@ -14,7 +14,7 @@ public class Jugador {
 
   // Constructor
   public Jugador (String nombre) {
-    this.dinero = 500.00;
+    this.dinero = 1000.00;
     this.nombre = nombre;
     this.turnosSinTirar = 0;
     this.propiedades = new ArrayList<Propiedad>();
@@ -73,7 +73,7 @@ public class Jugador {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (o == null) return false;
     Jugador jugador = (Jugador) o;
     return Objects.equals(nombre, jugador.nombre);
   }

@@ -2,7 +2,7 @@ package entities;
 
 public class CasillaInicio extends CasillaEspecial {
   // Props
-  private static final Double dineroAlpasar = 250d;
+  private static final Double dineroAlpasar = 500d;
 
   // Constructor
   public CasillaInicio(Integer numero, String nombre) {
@@ -12,6 +12,6 @@ public class CasillaInicio extends CasillaEspecial {
   // Methods
   @Override
   public void accion(Jugador jugador) {
-    System.out.println("Ele jugador " + jugador.getNombre() + " esta en inicio y va a cobrar.");
+    System.out.println("El jugador " + jugador.getNombre() + " esta en inicio y va a cobrar.");
   }
 }

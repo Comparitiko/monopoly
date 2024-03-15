@@ -16,6 +16,7 @@ public class Tablero {
         this.casillas = new ArrayList<>();
         this.cartas = new ArrayList<>();
         this.hacerTablero();
+        this.crearCartas();
     }
 
     /**
@@ -134,10 +135,10 @@ public class Tablero {
     }
 
     private void crearCartas() {
-        this.cartas.add(new Carta("¡Eres un desgraciado! paga 100€.", 500.0));
-        this.cartas.add(new Carta("¡Lotería! Gana 1000€ del banco", 1000.0));
-        this.cartas.add(new Carta("¡Me he perdido! Paga 50€ para pagar al guia", 50.0));
-        this.cartas.add(new Carta("¡Es mi cumpleaños! Tu abuela te regala 150€", 300.0));
+        this.cartas.add(new Carta("¡Eres un desgraciado! paga 300€.", -300.0));
+        this.cartas.add(new Carta("¡Lotería! Ganas 1000€ del estado pero solo recibes 500 por impuestos", 500.0));
+        this.cartas.add(new Carta("¡Te has perdido! Paga 50€ para pagar al guia, un carterista te roba otros 100", -150.0));
+        this.cartas.add(new Carta("¡Es tu cumpleaños! Tu abuela te regala 150€", 150.0));
         this.cartas.add(new Carta("¡Te ha tocado un sorteo de 100€ enhorabuena!", 100.0));
     }
 
@@ -152,7 +153,6 @@ public class Tablero {
     }
 
     // ---- Metodos ----
-
     /**
      * Devuelve una representación textual del tablero de Monopoly
      * @return String las casillas del tablero

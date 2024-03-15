@@ -70,13 +70,15 @@ public class Juego {
     /**
      * Pintamos el nombre y la posición de cada jugador en el tablero.
      */
-    public void pintarTablero(){
+    public String pintarTablero(){
         StringBuffer sb = new StringBuffer();
         for (Jugador jugador : jugadores){
-            sb.append("Jugador: ").append(jugador.getNombre());
+            sb.append("Jugador: ").append(jugador.getNombre()).append(" con dinero: ");
+            sb.append(jugador.getDinero()).append("€");
             sb.append(", Casilla actual: ").append(jugador.getCasillaActual().getNombre());
             sb.append("\n");
         }
+        return sb.toString();
     }
 
     /**
@@ -97,7 +99,12 @@ public class Juego {
         } else {
 
             Integer numCasillaActual = jugador.getCasillaActual().getNumero() + dado1 + dado2;
-            if (numCasillaActual > 40) numCasillaActual %= 40;
+            if (numCasillaActual > 40) {
+                numCasillaActual %= 40;
+                // No he encontrado otra forma que no sea casteando el tipo
+                CasillaInicio inicio = (CasillaInicio) tablero.buscarCasilla(1);
+                jugador.cobrar(inicio.getCantidad());
+            };
             Casilla casillaActual = this.tablero.buscarCasilla(numCasillaActual);
             if (!jugador.bancarrota()) {
                 System.out.println("El jugador " + jugador.getNombre() + " esta en la casilla " + casillaActual.getNombre() + ".");
