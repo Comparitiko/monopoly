@@ -57,7 +57,7 @@ public class Propiedad extends Casilla{
   @Override
   public void accion(Jugador jugador) {
     if (this.propietario == null && jugador.getDinero() >= this.coste) {
-      Integer opcion = menuCompra();
+      Integer opcion = menuCompra(jugador);
       if (opcion == 1) jugador.comprarPropiedad(this);
     }  else if (this.propietario != null) {
       jugador.pagarAlquiler(this);
@@ -70,11 +70,11 @@ public class Propiedad extends Casilla{
    * Metodo para mostrar el menu para realizar la compra de una propiedad
    * @return opcion elegida
    */
-  private Integer menuCompra () {
+  private Integer menuCompra (Jugador jugador) {
     Scanner sc = new Scanner(System.in);
     Integer opcionMenu = 0;
     while (opcionMenu < 1 || opcionMenu > 2) {
-      System.out.println("Quieres comprar la propiedad " + this.nombre + " con valor de: " + this.coste);
+      System.out.println("Quiere el jugador " + jugador.getNombre() + " comprar la propiedad " + this.nombre + " con valor de: " + this.coste);
       System.out.println("1. Si");
       System.out.println("2. No");
       try {

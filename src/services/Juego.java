@@ -81,6 +81,13 @@ public class Juego {
         return sb.toString();
     }
 
+    public boolean hayGanador () {
+        for (Jugador jugador : jugadores) {
+            if (jugador.bancarrota() && jugadores.size() == 2) return true;
+        }
+        return false;
+    }
+
     /**
      * Metodo para mover un jugador calculando en que casilla va a moverse al tirar dos dados de 6 caras
      * @param jugador jugador que se va a mover
@@ -103,6 +110,8 @@ public class Juego {
                 numCasillaActual %= 40;
                 // No he encontrado otra forma que no sea casteando el tipo
                 CasillaInicio inicio = (CasillaInicio) tablero.buscarCasilla(1);
+                System.out.println("El jugador " + jugador.getNombre() + "ha cobrado por pasar por salida: "
+                + inicio.getCantidad() + "€");
                 jugador.cobrar(inicio.getCantidad());
             };
             Casilla casillaActual = this.tablero.buscarCasilla(numCasillaActual);

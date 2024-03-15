@@ -14,7 +14,7 @@ public class Jugador {
 
   // Constructor
   public Jugador (String nombre) {
-    this.dinero = 1000.00;
+    this.dinero = 2000.00;
     this.nombre = nombre;
     this.turnosSinTirar = 0;
     this.propiedades = new ArrayList<Propiedad>();

@@ -55,9 +55,9 @@ public class Main {
         j.moverJugador(jugador);
       }
       System.out.println(j.pintarTablero());
+      if (j.hayGanador()) break;
       System.out.println("Pulsa enter para continuar...");
       sc.nextLine();
-      if (j.getJugadores().size() == 1) break;
     }
 
     System.out.println("El ganador del monopoly ha sido el jugador: " + j.getJugadores().getFirst().getNombre());
