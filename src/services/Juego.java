@@ -11,7 +11,7 @@ public class Juego {
 
     public Juego() {
         this.tablero = new Tablero();
-        this.jugadores = new ArrayList<Jugador>();
+        this.jugadores = new ArrayList<Jugador>(2);
     }
 
     public Tablero getTablero() {
@@ -37,13 +37,25 @@ public class Juego {
     //Métodos------------
 
     /**
-     * Agregamos o borramos jugadores y cartas de nuestra lista.
+     * Metodo para agregar un jugador y ponerlo en inicio
      * @param jugador
      */
     public void agregarJugador(Jugador jugador) {
+        Casilla inicio = tablero.buscarCasilla(1);
+        jugador.setCasillaActual(inicio);
+        inicio.getJugadores().add(jugador);
         this.jugadores.add(jugador);
     }
+
+    /**
+     * Elimina al jugador, y las propiedades pasan a ser de la banca
+     * @param jugador jugador que se quiere eliminar
+     */
     public void delJugador(Jugador jugador){
+        jugador.getCasillaActual().getJugadores().remove(jugador);
+        jugador.setCasillaActual(null);
+        jugador.getPropiedades().forEach(propiedad -> {propiedad.setPropietario(null);});
+        jugador.getPropiedades().clear();
         this.jugadores.remove(jugador);
     }
 
@@ -66,6 +78,11 @@ public class Juego {
             sb.append("\n");
         }
     }
+
+    /**
+     * Metodo para mover un jugador calculando en que casilla va a moverse al tirar dos dados de 6 caras
+     * @param jugador jugador que se va a mover
+     */
     public void moverJugador(Jugador jugador){
         if (jugador.getTurnosSinTirar() != 0) {
             jugador.setTurnosSinTirar(jugador.getTurnosSinTirar() - 1);
@@ -78,10 +95,12 @@ public class Juego {
             jugador.mover(tablero.buscarCasilla(2));
             jugador.getCasillaActual().accion(jugador);
         } else {
-            Integer numCasillaActual = jugador.getCasillaActual().getNumero() + dado1 + dado2;
 
+            Integer numCasillaActual = jugador.getCasillaActual().getNumero() + dado1 + dado2;
+            if (numCasillaActual > 40) numCasillaActual %= 40;
             Casilla casillaActual = this.tablero.buscarCasilla(numCasillaActual);
             if (!jugador.bancarrota()) {
+                System.out.println("El jugador " + jugador.getNombre() + " esta en la casilla " + casillaActual.getNombre() + ".");
                 jugador.mover(casillaActual);
                 jugador.getCasillaActual().accion(jugador);
             } else {

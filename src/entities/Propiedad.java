@@ -8,8 +8,8 @@ public class Propiedad extends Casilla{
   private Double alquiler;
   private Jugador propietario;
 
-  public Propiedad(String nombre, Double coste, Double alquiler) {
-    super(nombre);
+  public Propiedad(Integer numero, String nombre, Double coste, Double alquiler) {
+    super(nombre, numero);
     this.coste = coste;
     this.alquiler = alquiler;
     this.propietario = null;

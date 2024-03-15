@@ -6,8 +6,8 @@ public class CasillaCarta extends CasillaEspecial {
   // Props
   ArrayList<Carta> cartas;
   // Constructor
-  public CasillaCarta(String nombre, Double cantidad, ArrayList<Carta> cartas) {
-    super(nombre, cantidad);
+  public CasillaCarta(Integer numero, String nombre, Double cantidad, ArrayList<Carta> cartas) {
+    super(nombre, numero, cantidad);
     this.cartas = cartas;
   }
 

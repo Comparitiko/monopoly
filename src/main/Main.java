@@ -50,7 +50,17 @@ public class Main {
       j.agregarJugador(jugador);
     }
 
-    while (true) {}
+    while (true) {
+      for (Jugador jugador : j.getJugadores()) {
+        j.moverJugador(jugador);
+      }
+      j.pintarTablero();
+      System.out.println("Pulsa enter para continuar...");
+      sc.nextLine();
+      if (j.getJugadores().size() == 1) break;
+    }
+
+    System.out.println("El ganador del monopoly ha sido el jugador: " + j.getJugadores().getFirst().getNombre());
 
   }
 }

@@ -2,8 +2,8 @@ package entities;
 
 public class Carcel extends Casilla {
   // Constructor
-  public Carcel(String nombre) {
-    super(nombre);
+  public Carcel(Integer numero, String nombre) {
+    super(nombre, numero);
   }
 
   // Methods

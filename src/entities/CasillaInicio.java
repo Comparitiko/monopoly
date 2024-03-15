@@ -5,8 +5,8 @@ public class CasillaInicio extends CasillaEspecial {
   private static final Double dineroAlpasar = 250d;
 
   // Constructor
-  public CasillaInicio(String nombre) {
-    super(nombre, dineroAlpasar);
+  public CasillaInicio(Integer numero, String nombre) {
+    super(nombre, numero, dineroAlpasar);
   }
 
   // Methods

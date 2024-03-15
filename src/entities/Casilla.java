@@ -5,15 +5,14 @@ import java.util.Objects;
 
 public abstract class Casilla {
   // Props
-  private static Integer numeroCasilla = 0;
   protected String nombre;
   protected Integer numero;
   protected ArrayList<Jugador> jugadores;
 
   // Constructor
-  public Casilla(String nombre) {
+  public Casilla(String nombre, Integer numero) {
     this.nombre = nombre;
-    this.numero = numeroCasilla++;
+    this.numero = numero;
     this.jugadores = new ArrayList<>();
   }
 

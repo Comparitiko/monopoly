@@ -5,8 +5,8 @@ public class CasillaMoverCarcel extends CasillaEspecial {
   private Carcel carcel;
   private Integer turnosSinTirar;
 
-  public CasillaMoverCarcel (Carcel carcel, String nombre) {
-    super(nombre, 0d);
+  public CasillaMoverCarcel (Integer numero, Carcel carcel, String nombre) {
+    super(nombre, numero,0d);
     this.carcel = carcel;
     this.turnosSinTirar = 1;
   }
