@@ -81,11 +81,21 @@ public class Juego {
         return sb.toString();
     }
 
-    public boolean hayGanador () {
+    /**
+     * Metodo para comprobar si solo queda un jugador con mas de 0€ y si has asi es el ganado
+     * @return devuelve el jugador que ha ganado la partida, si no ha terminado la partida devuelve null
+     */
+    public Jugador ganador () {
+        Integer numGanadores = 0;
+        Jugador ganador = null;
         for (Jugador jugador : jugadores) {
-            if (jugador.bancarrota() && jugadores.size() == 2) return true;
+            if (!jugador.bancarrota()) {
+                if (numGanadores == 1) return null;
+                ganador = jugador;
+                numGanadores++;
+            }
         }
-        return false;
+        return ganador;
     }
 
     /**
