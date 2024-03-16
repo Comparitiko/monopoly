@@ -126,29 +126,6 @@ public class Jugador {
   }
 
   /**
-   * Metodo para vender una propiedad a la banca cobrando las 3/4 partes del coste original
-   */
-  public void vender () {
-    // No lo he implementado al final, si da tiempo se hace.
-    Scanner sc = new Scanner(System.in);
-    int opcionMenu = 0;
-    while (opcionMenu < 0 || opcionMenu > propiedades.size() - 1) {
-      for (int i = 0; i < propiedades.size(); i++) {
-        System.out.println((i + 1) + ". " + propiedades.get(i));
-      }
-      System.out.println("Que propiedad quieres vender");
-      try {
-        opcionMenu = sc.nextInt() + 1;
-      } catch (Exception e) {
-        System.out.println("Opción incorrecta");
-      }
-    }
-    this.dinero += this.propiedades.get(opcionMenu).getCoste() * 75 / 100;
-    this.propiedades.get(opcionMenu).setPropietario(null);
-    this.propiedades.remove(opcionMenu);
-  }
-
-  /**
    * Metodo para comprar una propiedad
    * @param propiedad propiedad a comprar
    */
