@@ -3,7 +3,7 @@
 ### Haciendolo @AdrianPerez2207, @Comparitiko y @alxrgdriguez
 
 - Alejandro: Tablero
-- Adrian: Juego
+- Adrián: Juego
 - Gabriel: Jugador
 ## Contribuidores
 [![Contribuidores](https://contrib.rocks/image?repo=Comparitiko/monopoly)](https://github.com/Comparitiko/monopoly/graphs/contributors)
