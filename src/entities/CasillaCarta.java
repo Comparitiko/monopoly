@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CasillaCarta extends CasillaEspecial {
   // Props
@@ -14,9 +15,10 @@ public class CasillaCarta extends CasillaEspecial {
   // Methods
   @Override
   public void accion(Jugador jugador) {
+    Collections.shuffle(cartas);
     Carta carta = this.cartas.getFirst();
     jugador.setDinero(jugador.getDinero() + carta.getCantidad());
-    System.out.println("Te ha tocado la carta: " + carta.getTexto() + "Tu dinero ahora es: " + jugador.getDinero());
+    System.out.println("Te ha tocado la carta: " + carta.getTexto() + " Tu dinero ahora es: " + jugador.getDinero());
     }
 }
 

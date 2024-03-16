@@ -81,15 +81,23 @@ public class Juego {
         return sb.toString();
     }
 
-    public boolean hayGanador () {
+    /**
+     * Calculamos ganador, comprobamos que los jugadores no estén en bancarrota.
+     * Si no lo están guardamos en una variable, y aumentamos en numGanadores.
+     * @return el jugador que ha ganado.
+     */
+
+    public Jugador ganador () {
+        Integer numGanadores = 0;
+        Jugador ganador = null;
         for (Jugador jugador : jugadores) {
-            if (jugador.bancarrota()) {
-                System.out.println("El jugador " + jugador.getNombre() + " esta en bancarrota.");
-                this.delJugador(jugador);
-                return false;
+            if (!jugador.bancarrota()) {
+                if (numGanadores == 1) return null;
+                numGanadores++;
+                ganador = jugador;
             }
         }
-        return false;
+        return ganador;
     }
 
     /**
@@ -104,9 +112,12 @@ public class Juego {
         }
         Integer dado1 = (tirarDados(1, 6));
         Integer dado2 = (tirarDados(1, 6));
-        if (dado1 == 5 || dado2 == 5) {
+        System.out.println("Dados del Jugador: " + jugador.getNombre());
+        System.out.println("Dado 1: " + dado1 + " Dado 2: " + dado2);
+        if (dado1 == 5 && dado2 == 5) {
             jugador.mover(tablero.buscarCasilla(31));
             jugador.getCasillaActual().accion(jugador);
+            System.out.println("------------------------------------------------");
         } else {
 
             Integer numCasillaActual = jugador.getCasillaActual().getNumero() + dado1 + dado2;
@@ -114,16 +125,24 @@ public class Juego {
                 numCasillaActual %= 40;
                 // No he encontrado otra forma que no sea casteando el tipo
                 CasillaInicio inicio = (CasillaInicio) tablero.buscarCasilla(1);
-                System.out.println("El jugador " + jugador.getNombre() + "ha cobrado por pasar por salida: "
+                System.out.println("El jugador " + jugador.getNombre() + " ha cobrado por pasar por salida: "
                 + inicio.getCantidad() + "€");
                 jugador.cobrar(inicio.getCantidad());
+                System.out.println("------------------------------------------------");
             };
             Casilla casillaActual = this.tablero.buscarCasilla(numCasillaActual);
             if (!jugador.bancarrota()) {
                 System.out.println("El jugador " + jugador.getNombre() + " esta en la casilla " + casillaActual.getNombre() + ".");
                 jugador.mover(casillaActual);
                 jugador.getCasillaActual().accion(jugador);
+                System.out.println("------------------------------------------------");
             }
+            else {
+                System.out.println("El jugador " + jugador.getNombre() + " esta en bancarrota.");
+                this.delJugador(jugador);
+                System.out.println("------------------------------------------------");
+            }
+
         }
     }
 
