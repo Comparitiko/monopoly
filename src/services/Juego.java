@@ -83,7 +83,11 @@ public class Juego {
 
     public boolean hayGanador () {
         for (Jugador jugador : jugadores) {
-            if (jugador.bancarrota() && jugadores.size() == 2) return true;
+            if (jugador.bancarrota()) {
+                System.out.println("El jugador " + jugador.getNombre() + " esta en bancarrota.");
+                this.delJugador(jugador);
+                return false;
+            }
         }
         return false;
     }
@@ -101,7 +105,7 @@ public class Juego {
         Integer dado1 = (tirarDados(1, 6));
         Integer dado2 = (tirarDados(1, 6));
         if (dado1 == 5 || dado2 == 5) {
-            jugador.mover(tablero.buscarCasilla(2));
+            jugador.mover(tablero.buscarCasilla(31));
             jugador.getCasillaActual().accion(jugador);
         } else {
 
@@ -119,9 +123,6 @@ public class Juego {
                 System.out.println("El jugador " + jugador.getNombre() + " esta en la casilla " + casillaActual.getNombre() + ".");
                 jugador.mover(casillaActual);
                 jugador.getCasillaActual().accion(jugador);
-            } else {
-                System.out.println("El jugador " + jugador.getNombre() + " esta en bancarrota.");
-                this.delJugador(jugador);
             }
         }
     }
